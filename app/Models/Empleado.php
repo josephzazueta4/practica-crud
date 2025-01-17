@@ -19,12 +19,13 @@ class Empleado extends Model
 
     public function cargo()
     {
-        return $this->belongsTo(Cargo::class, 'idcargo');
+        return $this->belongsTo(Cargo::class, 'idcargo', 'idcargo'); // Asegúrate de que la clave foránea es 'idcargo' y la clave primaria es 'idcargo'
     }
 
+    // Definir la relación con el modelo Nivel
     public function nivel()
     {
-        return $this->belongsTo(Nivel::class, 'idnivel');
+        return $this->belongsTo(Niveles::class, 'idnivel', 'idnivel'); // Aquí está bien si 'idnivel' es correcto
     }
 }
 
